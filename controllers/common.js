@@ -4,7 +4,6 @@ exports.sendError = function sendError(res, err) {
 }
 
 exports.sendSuccess = function sendSuccess(res, msg) {
-  
   res.status(200);
   res.send(msg);
 }

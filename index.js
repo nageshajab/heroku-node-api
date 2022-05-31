@@ -4,6 +4,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
+const middleware = require('./middleware');
 
 // initialize express app
 const app = module.exports = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
+//app.use(middleware.myLogger); will involve middleware for all endpoints
 
 // read environment variables
 dotenv.config();

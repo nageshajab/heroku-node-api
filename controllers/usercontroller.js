@@ -29,13 +29,13 @@ exports.validateToken = function (req, res) {
 
         const verified = jwt.verify(token, jwtSecretKey);
         if (verified) {
-            return res.send("Successfully Verified");
+            return true;
         } else {
             // Access Denied
-            return res.status(401).send(error);
+            return res.status(401).send('Invalid security token');
         }
     } catch (error) {
         // Access Denied
-        return res.status(401).send(error);
+        return res.status(401).send(error + 'Invalid security token');
     }
 }

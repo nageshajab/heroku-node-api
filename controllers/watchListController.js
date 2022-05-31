@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const common = require('./common');
 
 //const uri = process.env.DB_URI;
-const uri = 'mongodb+srv://nageshajab:password1!@cluster0.jbixq.mongodb.net/?retryWrites=true&w=majority';
+const uri = process.env.DB_URI;
 
 exports.list = async function list(req, res) {
     await MongoClient.connect(uri, function (err, db) {

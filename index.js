@@ -5,9 +5,11 @@ const express = require('express');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const middleware = require('./middleware');
+var cors = require('cors')
 
 // initialize express app
 const app = module.exports = express();
+app.use(cors());
 
 // define middlewares
 app.use(bodyParser.urlencoded({
